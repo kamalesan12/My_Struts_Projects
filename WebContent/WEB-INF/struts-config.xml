@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+                               
+<struts-config>
+<form-beans>
+<form-bean name="sam" type="Beans.ExceptForm"></form-bean>
+</form-beans>
+<action-mappings>
+<action path="/send" name="sam" type="Controllers.ExceptionHand">
+<exception key="msg" type="java.lang.ArithmeticException" path="/error.jsp"></exception>
+<forward name="success" path="/success.jsp"></forward>
+</action>
+</action-mappings>
+<message-resources parameter="/Resources/Messages"></message-resources>
+</struts-config>
